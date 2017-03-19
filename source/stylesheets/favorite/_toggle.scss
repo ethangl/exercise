@@ -1,9 +1,9 @@
 .favorite-toggle {
-  @include position(absolute, null null 12px 19px);
   @include size($favorite-toggle-size);
   background-color: $background-color;
   color: $font-color;
   overflow: hidden;
+  position: relative;
   transition: color $slow-transition;
   z-index: 1;
 

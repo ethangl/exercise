@@ -3,8 +3,26 @@ title: Favorite
 ---
 
 .rental
-  .rental-info
-    = image_tag "rental_src.png"
+  = image_tag "gallery.jpg"
+  .rental-profile
+    = image_tag "andy.jpg", class: "rental-user"
+    .rental-info
+      = image_tag "headline.png"
+      = image_tag "info.png"
+      .rental-icons
+        = image_tag "icon-1.png"
+        = image_tag "icon-2.png"
+        = image_tag "icon-3.png"
+        = image_tag "icon-4.png"
+    = image_tag "price.png"
+  nav.rental-actions
+    button.favorite-toggle
+      = svg "heart"
+    button
+      = image_tag "arrow.png"
+    span
+    button
+      = image_tag "dots.png"
 
   .favorite
     .favorite-content
@@ -14,14 +32,14 @@ title: Favorite
           label.favorite-list
             input.favorite-list-toggle type="checkbox" value="13"
             span.favorite-icon.favorite-icon--checkbox
-              = svg("check")
+              = svg "check"
             span.favorite-list-text Shortlist
             span.favorite-list-count 12
         li.favorite-lists-item
           label.favorite-list
             input.favorite-list-toggle type="checkbox" value="19"
             span.favorite-icon.favorite-icon--checkbox
-              = svg("check")
+              = svg "check"
             span.favorite-list-text My Summer Vacation
             span.favorite-list-count 18
           .users
@@ -34,11 +52,8 @@ title: Favorite
       form.favorite-create
         input.favorite-create-text placeholder="Create new list" required="required"
         span.favorite-icon.favorite-icon--add
-          = svg("add")
+          = svg "add"
         span.favorite-icon.favorite-icon--focus
-          = svg("focus")
+          = svg "focus"
         button.favorite-create-submit
-          = svg("submit")
-
-  button.favorite-toggle
-    = svg("heart")
+          = svg "submit"
