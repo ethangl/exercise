@@ -1,0 +1,59 @@
+.favorite-create {
+  border: solid $border-color;
+  border-width: 1px 0;
+  color: $brand-color;
+  margin-top: 25px;
+  overflow: hidden;
+  position: relative;
+  transform: translateY(75px);
+  transition: transform 0s $favorite-out-duration;
+
+  .rental--toggled & {
+    transform: translateY(0);
+    transition: transform $favorite-in-duration $ease-out-circ;
+  }
+}
+
+.favorite-create-text {
+  background: transparent;
+  border: 0;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1;
+  padding: 25px 40px;
+  width: 100%;
+
+  &::placeholder {
+    color: $brand-color;
+    transition: color $base-transition;
+  }
+
+  &:focus {
+    outline: none;
+
+    &::placeholder {
+      color: tint($brand-color, 66%);
+    }
+  }
+}
+
+.favorite-create-submit {
+  @include position(absolute, 0 (-10px) 0 null);
+  @include size(44px);
+  align-items: center;
+  border-radius: 50%;
+  color: $brand-color;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(100%);
+  transition: opacity $slow-transition, transform $slow-transition;
+
+  input:valid ~ & {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+  }
+}

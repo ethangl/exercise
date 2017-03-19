@@ -1,0 +1,48 @@
+.favorite-lists {
+  margin-top: 45px;
+}
+
+.favorite-lists-item {
+  align-items: center;
+  display: flex;
+  height: $favorite-lists-item-size;
+}
+
+.favorite-lists-item--new {
+  animation: reveal $base-transition forwards;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.favorite-list {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  flex: 1;
+  font-weight: 500;
+
+  input {
+    display: none;
+  }
+}
+
+.favorite-list-text {
+  font-size: 19px;
+  line-height: 1;
+}
+
+.favorite-list-count {
+  @include margin(4px null null 10px);
+  color: tint($font-color, 60%);
+  font-size: 15px;
+  line-height: 1;
+
+  &::before {
+    content: "(";
+  }
+
+  &::after {
+    content: ")";
+  }
+}

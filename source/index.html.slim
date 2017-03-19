@@ -1,0 +1,44 @@
+---
+title: Favorite
+---
+
+.rental
+  .rental-info
+    = image_tag "rental_src.png"
+
+  .favorite
+    .favorite-content
+      h4 My favorites
+      ul.favorite-lists
+        li.favorite-lists-item
+          label.favorite-list
+            input.favorite-list-toggle type="checkbox" value="13"
+            span.favorite-icon.favorite-icon--checkbox
+              = svg("check")
+            span.favorite-list-text Shortlist
+            span.favorite-list-count 12
+        li.favorite-lists-item
+          label.favorite-list
+            input.favorite-list-toggle type="checkbox" value="19"
+            span.favorite-icon.favorite-icon--checkbox
+              = svg("check")
+            span.favorite-list-text My Summer Vacation
+            span.favorite-list-count 18
+          .users
+            .user
+              = image_tag "phi.jpg"
+              .user
+                = image_tag "mae.jpg"
+                .user
+                  = image_tag "rick.jpg"
+      form.favorite-create
+        input.favorite-create-text placeholder="Create new list" required="required"
+        span.favorite-icon.favorite-icon--add
+          = svg("add")
+        span.favorite-icon.favorite-icon--focus
+          = svg("focus")
+        button.favorite-create-submit
+          = svg("submit")
+
+  button.favorite-toggle
+    = svg("heart")

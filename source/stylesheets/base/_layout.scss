@@ -1,0 +1,19 @@
+* {
+  &,
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+body {
+  background-color: mix(#fdfdfd, $brand-color, 99.5%);
+  color: $font-color;
+  font-family: $base-font-family;
+  margin: 0;
+}

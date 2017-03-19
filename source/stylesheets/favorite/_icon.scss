@@ -1,0 +1,55 @@
+.favorite-icon {
+  @include size(24px);
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-right: 16px;
+  pointer-events: none;
+}
+
+.favorite-icon--checkbox {
+  box-shadow: inset 0 0 0 2px $brand-color;
+  color: $background-color;
+  transition: border-radius $base-transition, box-shadow $base-transition;
+
+  svg {
+    stroke-dasharray: 20;
+    stroke-dashoffset: 20;
+  }
+
+  input:checked ~ & {
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 12px $brand-color;
+
+    svg {
+      animation: dash $slow-transition forwards;
+    }
+  }
+}
+
+.favorite-icon--add,
+.favorite-icon--focus {
+  @include position(absolute, 0 null 0 0);
+  margin: auto;
+  transition: opacity $slow-transition, transform $slow-transition;
+}
+
+.favorite-icon--add {
+  color: $border-color;
+
+  input:focus ~ & {
+    opacity: 0;
+    transform: translateY(-150%);
+  }
+}
+
+.favorite-icon--focus {
+  color: $brand-color;
+  opacity: 0;
+  transform: translateY(150%);
+
+  input:focus ~ & {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

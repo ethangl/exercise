@@ -1,0 +1,23 @@
+// Typography
+$base-font-family: "Raleway", $font-stack-system;
+$base-spacing: 1.5rem;
+
+// Sizes
+$favorite-toggle-size: 30px;
+$favorite-lists-item-size: 55px;
+
+// Colors
+$brand-color: #0067db;
+$font-color: #000;
+$background-color: #fff;
+$border-color: #d4d4d4;
+
+// Animations
+$favorite-in-duration: 750ms 150ms;
+$favorite-out-duration: 500ms;
+$base-duration: 250ms;
+$base-timing: $ease-in-out-cubic;
+$base-transition: $base-duration $base-timing;
+$slow-duration: 600ms;
+$slow-transition: $slow-duration $base-timing;
+$bounce-transition: $slow-duration $ease-in-out-back;

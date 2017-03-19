@@ -1,0 +1,41 @@
+.favorite-toggle {
+  @include position(absolute, null null 12px 19px);
+  @include size($favorite-toggle-size);
+  background-color: $background-color;
+  color: $font-color;
+  overflow: hidden;
+  transition: color $slow-transition;
+  z-index: 1;
+
+  &::before {
+    @include position(absolute, null null 0 ($favorite-toggle-size / 2));
+    @include size(0);
+    background-color: $brand-color;
+    border-radius: 50%;
+    content: "";
+    transform: translateX(-50%);
+    transition: height $base-transition, width $base-transition;
+    z-index: 0;
+  }
+
+  .rental--toggled & {
+    color: $brand-color;
+  }
+
+  .rental--favorited & {
+    color: $brand-color;
+
+    &::before {
+      @include size($favorite-toggle-size - 2);
+    }
+  }
+
+  &.favorite-toggle--beat {
+    animation: beat $slow-transition forwards;
+  }
+
+  svg {
+    position: relative;
+    z-index: 1;
+  }
+}

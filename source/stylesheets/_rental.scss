@@ -1,0 +1,13 @@
+.rental {
+  @include position(absolute, 0);
+  @include size(613px, 523px);
+  background-color: $background-color;
+  box-shadow: 0 1px 7px rgba($brand-color, 0.08), 0 0 100px rgba($brand-color, 0.05);
+  margin: auto;
+  overflow: hidden;
+}
+
+.rental--toggled .rental-info {
+  filter: blur(5px);
+  transition: filter $favorite-out-duration linear;
+}
